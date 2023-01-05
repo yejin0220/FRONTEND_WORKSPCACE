@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>배경관련 스타일</title>
+    <style>
+        body{
+            background-color: skyblue;
+        }
+
+
+
+        #div-bg{
+            background-color: white;
+            border: 30px solid blue;
+            padding : 20px;
+            width: 50%;
+            /*width : 50% -> body영역을 기준으로 50%만큼 영역이 설정됨*/
+            /*div의 content의 가로길이는 부모요소(body)*/
+            box-sizing: border-box;
+            /*가로 길이를 border까지 포함해서 지정하겠다 라는 뜻.*/
+        }
+
+        .div-test{
+            margin: 30px;
+            border:10px dashed;
+            padding:20px;
+            background-color: yellow;
+        }
+
+        #div1{
+            background-clip: border-box;
+            /*기본값*/
+        }
+
+        #div2{
+            background-clip: padding-box;
+            /*테두리에는 배경색이 지정되지 않음*/
+        }
+
+        #div3{
+            background-clip: content-box;
+            /*배경색이 지정되는 범위가 콘텐츠 영역으로 한정*/
+        }
+
+        #bg-img{
+            border:1px solid black;
+            width: 70%;
+            height:  800px;
+
+            background-image: url("resources/image/bono.jpg");
+            background-repeat: repeat-y; /*사진이 세로로만 반복됨*/
+            background-size: contain; /*가로, 세로 상관없이 둘 중에 하나가 가득 찰때까지 크기를 자동으로 바꿈*/
+            background-position: 50% 50%; /*center center 또는 50px 50px로도 지정 가능*/
+            background-attachment: fixed;
+        }
+    </style>
+
+</head>
+<body>
+    <h1>배경관련스타일(background~~)</h1>
+
+    <h3>background-color:배경색을 지정하고자 할때 사용</h3>
+    <div id="div-bg">
+        인생에 든 설레는 있는 가는 보배를 온갖 끓는다. 있는 찾아다녀도, 때에, 남는 착목한는 우리 같으며, 이상의 황금시대다. 이상은 찬미를 찾아 위하여서 트고, 얼마나 있는 속잎나고, 말이다. 속잎나고, 청춘 가는 노년에게서 피가 붙잡아 자신과 풍부하게 끓는다. 피가 그들에게 그들의 유소년에게서 영락과 못하다 우리의 이상은 있는가? 위하여 인류의 거선의 가치를 낙원을 노년에게서 품에 것이다. 뜨고, 불러 이것이야말로 끓는 가는 긴지라 곳으로 뿐이다. 맺어, 동력은 행복스럽고 인생을 부패뿐이다. 청춘에서만 있는 밥을 속에서 별과 이 보이는 역사를 아니다. 청춘이 밥을 든 아름다우냐? 이상은 유소년에게서 새가 찾아다녀도, 그들은 보는 그러므로 이상의 것이다.
+    </div>
+
+    <br>
+    <hr>
+
+    <h3>background-cilp : 배경을 적용시키고자 하는 범위를 지정할 때 사용</h3>
+    <pre>
+        선택자{
+            background-cilp:border-box(기본값)/padding-box/content-box;
+        }
+    </pre>
+
+    <div class="div-test" id="div1">
+        인생에 든 설레는 있는 가는 보배를 온갖 끓는다. 있는 찾아다녀도, 때에, 남는 착목한는 우리 같으며, 이상의 황금시대다. 이상은 찬미를 찾아 위하여서 트고, 얼마나 있는 속잎나고, 말이다. 속잎나고, 청춘 가는 노년에게서 피가 붙잡아 자신과 풍부하게 끓는다. 피가 그들에게 그들의 유소년에게서 영락과 못하다 우리의 이상은 있는가? 위하여 인류의 거선의 가치를 낙원을 노년에게서 품에 것이다. 뜨고, 불러 이것이야말로 끓는 가는 긴지라 곳으로 뿐이다. 맺어, 동력은 행복스럽고 인생을 부패뿐이다. 청춘에서만 있는 밥을 속에서 별과 이 보이는 역사를 아니다. 청춘이 밥을 든 아름다우냐? 이상은 유소년에게서 새가 찾아다녀도, 그들은 보는 그러므로 이상의 것이다.
+    </div>
+    <div class="div-test" id="div2">
+        인생에 든 설레는 있는 가는 보배를 온갖 끓는다. 있는 찾아다녀도, 때에, 남는 착목한는 우리 같으며, 이상의 황금시대다. 이상은 찬미를 찾아 위하여서 트고, 얼마나 있는 속잎나고, 말이다. 속잎나고, 청춘 가는 노년에게서 피가 붙잡아 자신과 풍부하게 끓는다. 피가 그들에게 그들의 유소년에게서 영락과 못하다 우리의 이상은 있는가? 위하여 인류의 거선의 가치를 낙원을 노년에게서 품에 것이다. 뜨고, 불러 이것이야말로 끓는 가는 긴지라 곳으로 뿐이다. 맺어, 동력은 행복스럽고 인생을 부패뿐이다. 청춘에서만 있는 밥을 속에서 별과 이 보이는 역사를 아니다. 청춘이 밥을 든 아름다우냐? 이상은 유소년에게서 새가 찾아다녀도, 그들은 보는 그러므로 이상의 것이다.
+    </div>
+    <div class="div-test" id="div3">
+        인생에 든 설레는 있는 가는 보배를 온갖 끓는다. 있는 찾아다녀도, 때에, 남는 착목한는 우리 같으며, 이상의 황금시대다. 이상은 찬미를 찾아 위하여서 트고, 얼마나 있는 속잎나고, 말이다. 속잎나고, 청춘 가는 노년에게서 피가 붙잡아 자신과 풍부하게 끓는다. 피가 그들에게 그들의 유소년에게서 영락과 못하다 우리의 이상은 있는가? 위하여 인류의 거선의 가치를 낙원을 노년에게서 품에 것이다. 뜨고, 불러 이것이야말로 끓는 가는 긴지라 곳으로 뿐이다. 맺어, 동력은 행복스럽고 인생을 부패뿐이다. 청춘에서만 있는 밥을 속에서 별과 이 보이는 역사를 아니다. 청춘이 밥을 든 아름다우냐? 이상은 유소년에게서 새가 찾아다녀도, 그들은 보는 그러므로 이상의 것이다.
+    </div>
+
+
+    <br>
+    <hr>
+
+    <h3>배경 이미지 테스트</h3>
+    <pre>
+        선택자{
+            background-image : url(이미지경로);
+            background-repeat : repeat(반복)/repeat-x/repeat-y(세로반복)/no-repeat(반복x); => 이미지 반복
+            background-size : auto/contain/cover/px px/%; => 이미지의 크기
+            background-position : 좌/우/가운데 중 1  /위/아래/가운데 중 1 px px/% %; => 이미지의 시작위치 선정
+            background-attachment : scroll(스크롤과 함께 이미지 이동)/fixed(스크롤이 움직여도 이미지는 그대로);
+        }
+    </pre>
+
+    <div id="bg-img">
+        
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>   
+</body>
+</html>
