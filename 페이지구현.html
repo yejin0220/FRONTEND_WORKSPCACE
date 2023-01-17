@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>네이버 블로그 관리</title>
+    <style>
+        body{
+            margin: 0px;
+        }
+        div{
+           /* border: 1px solid green;  */
+            box-sizing: border-box;
+            font-family: '나눔고딕',NanumGothic,'돋움',Dotum,'Apple SD Gothic Neo',Helvetica,Sans-serif;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+        .wrap{
+            width: 100%;
+            height: 1800px;
+            margin: 0;
+        }
+        #top_menu{
+            height: 54px;
+            background-color: rgb(0,199,60);
+        
+        }
+        #top_menu div{
+            height: 100%;
+        }
+        #right_menu,#left_menu, #bt,#bt2, #bt7{
+            display: block;
+            float: right;
+        }
+        #left_menu>#left_menu1{
+            margin-left: 0 px;
+            padding-left: 10px;
+            padding-top: 10px;
+            }
+        #left_menu>#left_menu12{
+            margin-left: 0px;
+            padding-right:10px;
+            padding-top: 11px;
+            }
+        #left_menu{
+            float: left;
+            display: flex;
+            justify-content: start;
+        }
+        #left_menu1{
+            display: block;
+            margin: auto;
+            padding: 10px 5px;
+        }
+        #left_menu>.line{
+            border-left: 1px solid rgba(0,0,0,.12);
+        }
+        #left_menu1>#text{
+            display: inline-block;
+            padding: 14px 10px 14px 0;
+            height: 29px;
+            margin-left: 11px;
+            font-family: nanumsquare,'나눔스퀘어',sans-serif;
+            font-size: 21px;
+            line-height: 10px;
+            font-weight: 400;
+            color: white;
+        }
+        #left_menu2{
+            float: left;
+            display: flex;
+            justify-content: start;
+            height: 100%;
+            width: 50%;
+        }
+        #right_menu2{
+            float: right;
+            display: flex;
+            justify-content: flex-end;
+            height: 100%;
+            width: 50%;
+        }
+
+        #right_menu1{
+            float: right;
+            display: flex;
+            justify-content:end;
+            border-left: 1px solid rgba(0,0,0,.12);
+        }
+        #right_menu1>#text{
+            padding: 20px 12px;
+            font-size: 12px;
+            color: white;
+            text-decoration: none;
+        }
+        #right_menu1>img{
+            margin: auto;
+            padding: 19px 19px 18px;
+        }
+        #right_menu2>#bt{
+            margin-top: 6px;
+            margin-right:8px;
+            height: 100%;
+        }
+        
+        #left_menu2>li{
+            padding: 10px 14px;
+            height: 100%;
+        }
+
+        #bt1{
+            z-index: 8000;
+            position: relative;
+            background: #fff;
+            border-bottom: 1px solid #c2c2c2;
+        }
+        #bt2>a{
+            box-sizing: border-box;
+            padding: 0px 0px 19px;
+            text-align: center;
+            text-decoration: none;
+            font-family: nanumgothic,sans-serif;
+            font-size: 13px;
+            color: #333;
+        }
+        #bt input{
+            height: 26px;
+            border: 1px solid #cecece;
+            font-family: nanumgothic,sans-serif;
+            font-size: 13px;
+            background-color: white;
+            vertical-align: top;
+            cursor: pointer;
+        }
+        #bt>#grb{
+            background-color: rgb(0,199,60);
+            color: white;
+        }
+        #body{
+            width: 100%;
+            height: 1600px;
+            display: inline-flex;
+
+        }
+        #left_bd{
+            
+            width: 190px;
+            height: 687px;
+            padding: 25px 20px 0px;
+        }   
+        #title,#title a{
+            font-family: nanumgothic,sans-serif;
+            font-size: 13px;
+            line-height: 15px;
+            font-weight: 700;
+            color: #000;
+            text-decoration: none;
+        }
+        #body1 a{
+            text-decoration: none;
+            margin: 8px 0;
+            font-family: nanumgothic,sans-serif;
+            font-size: 12px;
+            line-height: 14px;
+            color: #333;
+        }
+        #body1{
+            padding-bottom: 18px;
+            border-bottom: 1px solid  rgba(0,0,0,.12);
+        } 
+        #depth2{
+            padding-bottom: 18px; 
+         
+        }
+
+        #depth1{
+            padding-top: 18px;
+            padding-bottom: 18px;
+            border-bottom: 1px solid  rgba(0,0,0,.12);
+        }
+
+        #depth2{
+            margin: 12px 0px 0px 0px;
+            padding: 0;
+        }
+        #depth2 a{
+            text-decoration: none;
+            margin: 8px 0;
+            font-family: nanumgothic,sans-serif;
+            font-size: 12px;
+            line-height: 14px;
+            color: #333;
+        }
+        #depthend{
+            padding-top: 18px;
+            padding-bottom: 18px;
+            border-bottom: none;
+        }
+        .arrow-next {
+            position: relative;
+            float: right;
+            width:15px;
+            height:15px;
+        }
+        .arrow-next::after {
+            position: absolute;
+            top: 2.5px; 
+            content: '';
+            width: 7px; /* 사이즈 */
+            height: 7px; /* 사이즈 */
+            border-top: 1px solid rgba(0,0,0,.12); /* 선 두께 */
+            border-right: 1px solid rgba(0,0,0,.12); /* 선 두께 */
+            transform: rotate(45deg); /* 각도 */
+        }
+        #right_body{
+            height: 1600px;
+            width: 1000px;
+            margin: 0px 0px 0px -1px;
+            padding: 35px 40px 70px;
+            border-left: 1px solid rgba(0,0,0,.12);
+        }
+
+        .content_title{
+            padding-bottom: 20px;
+            border-bottom: 2px solid #3a3a3a;
+            font-family: nanumgothic,sans-serif;
+            font-size: 20px;
+            line-height: 1;
+            font-weight: 700;
+            color: #000;
+        }
+        .usedskin {
+            position: relative;
+            margin: 21px 0 0;
+            height: 43px;
+            overflow: hidden;
+            }
+    
+        #right_body h2{
+            float: left;
+            font-size: 14px;
+            padding-top: 3px;
+            font-weight: 700;
+            color: #171b22;
+        }  
+        .submenu {
+            float: left;
+            padding: 3px 0 0 14px;
+            font-size: 12px;
+            text-decoration: underline;
+            }
+        .select_skin {
+            overflow: hidden;
+            zoom: 1;
+            padding-top: 20px;
+            padding-left: 0px;
+        }    
+        .select_skin div .border {
+            border: 1px solid #e7e8e3;
+            width: 220px;
+            height: 220px;
+            margin-bottom: 7px;
+            vertical-align: top;
+            justify-content: flex-start;
+        
+        }       
+        #px{   
+           display: inline-block;
+            padding-right: 45px;
+            padding-top: 25px;
+         }
+        #px>img{
+            border: solid 1px #e7e8e3;
+            border-style:outset ;
+         }
+        #im1{
+            display: inline-block;
+            padding-right: 170px;
+         }
+        #bodyimg a{
+            font-size: 11px;
+            color: #c5bdbd;
+            letter-spacing: -1px;
+         }
+        #bodyimg, #nm{
+            font:  12px "돋움",Dotum,Helvetica,Sans-serif;
+              color: #424242;
+         }
+        #im2{
+            display: inline-block;
+            padding-right: 143px;
+         }
+        #im3{
+            display: inline-block;
+            padding-right: 138px;
+         }
+        #im4{
+            display: inline-block;
+            padding-right: 160px;
+         }
+        #nm{
+            padding: 100px 0 10px;
+            padding-left: -50px;
+            text-align: center;
+            width: 85%;
+            font-size: 15px;
+            font: bold 13px 돋움,Dotum,굴림,Gulim,Helvetica,Sans-serif;
+            display: inline-block;
+            
+            
+         }
+        #nm a{
+            display: inline-block;
+            padding: 3px 7px 1px 7px;
+            border-left: 1px solid #ccc;
+
+            text-decoration: none;
+            margin-left: -7px;
+            
+         }
+        #nm9{
+            border-right: 1px solid #ccc;
+         }
+        #bt7{
+            font: bold 12px/1.5em "돋움",Dotum,Helvetica,Sans-serif;
+            color: #424242;
+            margin-top: 6px;
+            margin-right:10px;
+          
+            }
+        #btsize{
+            width: 85%;
+            margin-bottom: 20px;
+        }
+        #bordertop{
+            padding-top: 20px;
+            border-top: solid 1px #999;
+            width: 87%;
+           
+        }
+        #bt8{
+            margin: auto;
+            
+            height: 35px;
+            padding: 0 13px;
+            background: 0 0;
+            border-radius: 8px;
+            border: solid 1px rgba(0,0,0,.1);
+            font-size: 16px;
+            line-height: 33px;
+            color: #000;
+            font-weight: 700;
+            align-content:center;
+            display: block;
+            
+        }
+        #footer{
+            width: fit-content;
+            margin: auto;
+            width: 100%;
+            height: 180px;
+            padding: 20px 0px;
+            border-top: 1px solid #e1e1e1;
+            background: #f6f6f6;
+            display: block;
+        }
+        #footer_inner{
+            text-align: center;
+        }
+        #footer_1{
+            padding: 0px 100px 0px 280px;
+        }
+        #footer_menu{
+            position: relative;
+            display: inline-block;
+            padding: 0 12px 0 13px;
+            font-family: nanumgothic,sans-serif;
+            font-size: 13px;
+            line-height: 15px;
+            color: #000;
+        }
+        #footer2{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 12px;
+            margin-top: 15px;
+            font-family: helvetica,nanumgothic,sans-serif;
+            font-size: 10px;
+            color: #444;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div id="top_menu">
+            <div id="right_menu">
+                <div id="right_menu1">
+                <img src="resources/image/menu.PNG"
+                width="17" height="17"></div>
+                
+            <div id="right_menu1"><a href="" id="text">juna</a></div>
+            <div id="right_menu1"><a href="" id="text">내 블로그</a></div>
+            <div id="right_menu1"><a href="" id="text">이웃블로그</a></div>
+            <div id="right_menu1"><a href="" id="text">블로그 홈</a></div>
+            <div id="right_menu1"><a href="" id="text">내 메뉴</a></div>
+            </div>
+        
+           
+            <div id="left_menu">
+                <a href="https://naver.com" id="left_menu1">
+                <img src="resources/image/naver.PNG"
+                width="34" height="34"></a>
+                <div id="left_menu12">
+                <img src="resources/image/blog.PNG"
+                width="54" height="34"></div>
+                <div class="line" id="left_menu1"><div id="text">관리</div></div>
+            </div>
+            
+        </div> 
+        <div id=bt1>
+            <div id="right_menu2">
+                <div id="bt"><input type="button" id="grb" value="블로그 마켓 가입"></div>
+                <div id="bt"><input type="button" value="블로그 쉽게 꾸미기"></div>
+                <div id="bt"><input type="button" value="블로그 글쓰기"></div>
+            </div>    
+            <div id="left_menu2">
+                <li id="bt2"><a href="웹페이지구현_toy.html">기본 설정</a></li>
+                <li id="bt2"><a href="" style="color: rgb(0,199,60);">꾸미기 설정</a></li>
+                <li id="bt2"><a href="">메뉴·글·동영상 관리</a></li>
+                <li id="bt2"><a href="">내 블로그 통계</a></li>
+                <li id="bt2"><a href="">&nbsp; 전체 보기</a></li>
+            </div>
+        </div>
+        <div id="body">
+            <div id="left_bd">
+                <div id="body1">
+                    <div id="title">스킨</div>
+                    <ul id="depth2">
+                        <li><a href="" style="color: rgb(0,199,60);">스킨선택</a><i></i></li>
+                        <li><a href="">내 스킨 관리</a></li>
+                    </ul>
+                </div>
+                <div id="depth1">
+                    <div id="title">디자인 설정</div>
+                        <ul id="depth2">
+                            <li><a href="">레이아웃·위젯 설정</a></li>
+                            <li><a href="">세부 디자인 설정</a></li>
+                            <li><a href="">타이틀 꾸미기</a></li>
+                            <li><a href="">글·댓글 스타일</a></li>
+                
+                        </ul>
+                    </div>
+                <div id="depth1">
+                    <div id="title">아이템설정</div>
+                        <ul id="depth2">
+                            <li><a href="">퍼스나콘</a></li>
+                            <li><a href="">뮤직</a></li>
+                            </ul>
+                </div>
+                <div id="depth1">
+                    <div id="title">네이버페이·선물 내역</div>
+                        <ul id="depth2">
+                            <li><a href="">페이 이용내역</a></li>
+                            <li><a href="">아이템 이용내역</a></li>
+                            </ul>
+                </div>
+                <div id="depth1">
+                    <div id="title">
+                        <a href="">공지사항</a>
+                        <div class="arrow-next"></div>
+                    </div>
+                </div>
+                <div id="depth1">
+                    <div id="title">
+                        <a href="">블로그 이용 Tip</a>
+                        <div class="arrow-next"></div>
+                    </div>
+                </div>
+                <div id="depthend">
+                    <div id="title">
+                        <a href="">블로그 스마트봇</a>
+                        <div class="arrow-next"></div>
+                    </div>
+                </div>
+            </div>
+            <div id="right_body">
+                <div>
+                    <h1 class="content_title">스킨 선택</h1>
+                    <div class="content_box"></div>
+                </div>
+                <div class="userskin"></div>
+                    <div class="userskin1">
+                    <h2>사용중인 스킨<span class="bar">&nbsp;|&nbsp;</span><m style="color: #41b40a;">기본 스킨</m></h2>
+                        <p class="submenu">레이아웃 설정</p>
+                        <p class="submenu">세부 디자인 설명</p>
+                    </div>
+                <ul class="select_skin">
+                    
+                        <div>
+                            <div id="bodyimg">
+                                <div id="px"><img src="resources/image/그림1.png" alt="" width="220" height="220"></div>
+                                <div id="px"><img src="resources/image/와이드.png" alt="" width="220" height="220"></div>
+                                <div id="px"><img src="resources/image/도큐먼트.png" alt="" width="220" height="220"></div>
+                                <br>
+                                <div id="im1" class="bodytext"><input type="radio" name="input_radio" value="line" >라인
+                                <a> | 미리보기</a></div>
+                                <div id="im1"><input type="radio" name="input_radio" value="line" >와이드
+                                <a> | 미리보기</a></div>
+                                <div id="im1"><input type="radio" name="input_radio" value="line" >도큐먼트
+                                <a> | 미리보기</a></div>
+                            </div>    
+                        
+                            
+                            <div id="bodyimg">
+                            <div id="px"><img src="resources/image/그림4.png" alt="" width="220" height="220"></div>
+                                <div id="px"><img src="resources/image/그림5.png" alt="" width="220" height="220"></div>
+                                <div id="px"><img src="resources/image/그림6.png" alt="" width="220" height="220"></div>
+                                <br>
+                                <div id="im2"><input type="radio" name="input_radio" value="line" >Me, Myself
+                                <a> | 미리보기</a></div>
+                                <div id="im2"><input type="radio" name="input_radio" value="line" >하늘하늘
+                                <a> | 미리보기</a></div>
+                                <div id="im2"><input type="radio" name="input_radio" value="line" >정적인 프레임
+                                <a> | 미리보기</a></div>
+                            </div>
+                            <div id="bodyimg">
+                                <div id="px"><img src="resources/image/그림7.png" alt="" width="220" height="220"></div>
+                                <div id="px"><img src="resources/image/그림8.png" alt="" width="220" height="220"></div>
+                                <div id="px"><img src="resources/image/그림9.png" alt="" width="220" height="220"></div>
+                                <br>
+                                <div id="im3"><input type="radio" name="input_radio" value="line" >비율의 정석
+                                <a> | 미리보기</a></div>
+                                <div id="im3"><input type="radio" name="input_radio" value="line" >화이트 라벨
+                                <a> | 미리보기</a></div>
+                                <div id="im3"><input type="radio" name="input_radio" value="line" >솜사탕
+                                <a> | 미리보기</a></div>
+                            </div>
+                            <div id="bodyimg">
+                                <div id="px"><img src="resources/image/민트핑크.png" alt="" width="220" height="220"></div>
+                                <div id="px"><img src="resources/image/그림10.png" alt="" width="220" height="220"></div>
+                                <div id="px"><img src="resources/image/그림11.png" alt="" width="220" height="220"></div>
+                                <br>
+                                <div id="im4"><input type="radio" name="input_radio" value="line" >민트핑크
+                                <a> | 미리보기</a></div>
+                                <div id="im4"><input type="radio" name="input_radio" value="line" >가을 숲
+                                <a> | 미리보기</a></div>
+                                <div id="im4"><input type="radio" name="input_radio" value="line" >옐로우 라인
+                                <a> | 미리보기</a></div>
+                            </div>
+
+                            <div class="number">
+                                <div id="nm">
+                                    <a href="">1</a>
+                                    <a href="">2</a>
+                                    <a href="">3</a>
+                                    <a href="">4</a>
+                                    <a href="">5</a>
+                                    <a href="">6</a>
+                                    <a href="">7</a>
+                                    <a href="">8</a>
+                                    <a href="" id="nm9">9</a>
+
+                                </div>
+                                <div id="btsize">
+                                    <div id="bt"><input type="button" id="bt7" value="세부 디자인 설정"></div>
+                                    <div id="bt"><input type="button" id="bt7" value="레이아웃 설정"></div> 
+                                </div>
+                            </div>
+                            <div id="bordertop">
+                                <div>
+                                    <div><input type="button" id="bt8" value="스킨 적용"></div> 
+                                </div>
+
+                            </div>
+                            
+                        </div>    
+                </ul>  
+
+            </div>
+
+        </div>
+        <div id="footer">
+                <div id="footer_inner">
+                <div id="footer_1">
+                    <a href="" id="footer_menu">이용약관</a> |
+                    <a href="" id="footer_menu">블로그 서비스 운영정책</a> |
+                    <a href="" id="footer_menu">개인정보처리방침</a> |
+                    <a href="" id="footer_menu">책임의 한계와 법적고지</a> |
+                    <a href="" id="footer_menu">글 권리 보호하기</a> |
+                    <a href="" id="footer_menu">게시중단요청서비스</a> 
+                </div>
+                <div id="footer2">
+                    <img src="resources/image/naver_logo.png" width="63px" height="12px"> &nbsp;&nbsp;
+                    <p id="p2">
+                    Copyright &copy; NAVER Corp. All Rights Reserved.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+
+
+
+    </div>
+</body>
+</html>

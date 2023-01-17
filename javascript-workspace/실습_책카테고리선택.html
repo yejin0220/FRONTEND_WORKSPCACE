@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>책카테고리 선택</title>
+    <style>
+        .area{
+            border: 1px solid red;
+            width: 500px;
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Practice1</h1>
+    <form action="">
+        <fieldset>
+            <legend>취미</legend>
+
+            <input type="checkbox" name="hobby" value="allthem" id="allthem">
+            <label for="allthem">전체선택</label>
+
+            <input type="checkbox" name="hobby" value="종합" id="all">
+            <label for="all">종합</label>
+
+            <input type="checkbox" name="hobby" value="소설" id="fiction">
+            <label for="fiction">소설</label>
+
+            <input type="checkbox" name="hobby" value="시/에세이" id="essay">
+            <label for="essay">시/에세이</label>
+
+            <input type="checkbox" name="hobby" value="경제/경영" id="business">
+            <label for="business">경제/경영</label>
+
+            <input type="checkbox" name="hobby" value="자기계발" id="study">
+            <label for="study">자기계발</label>
+
+            <input type="checkbox" name="hobby" value="아동" id="child">
+            <label for="child">아동</label>
+
+            <br>
+
+            <input type="checkbox" name="hobby" value="여행" id="travel">
+            <label for="travel">여행</label>
+
+            <input type="checkbox" name="hobby" value="과학" id="science">
+            <label for="science">과학</label>
+
+            <input type="checkbox" name="hobby" value="역사/문화" id="culture">
+            <label for="culture">역사/문화</label>
+
+            <input type="checkbox" name="hobby" value="외국어" id="foriegn">
+            <label for="foriegn">외국어</label>
+
+            <input type="checkbox" name="hobby" value="컴퓨터" id="computure">
+            <label for="computure">컴퓨터</label>
+
+            <input type="checkbox" name="hobby" value="만화" id="cartoon">
+            <label for="cartoon">만화</label>
+            
+        </fieldset>
+    </form>
+
+    <br>
+
+    <button onclick="Category();">카테고리 선택</button>
+    <div id="area_1" class="area"></div>
+    
+    <script>
+        function Category(){
+            //category속성값으로 요소를 가져올때, document.getElementsByName("name속성값");
+        
+            let hobby=document.getElementsByName("hobby");
+
+            let checkedItem="";
+
+            for(let i=0; i<hobby.length; i++){
+                if(hobby[i].checked) {
+                    checkedItem += hobby[i].value+"/";
+                }
+            }
+            
+          
+            document.getElementById("area_1").innerHTML=checkedItem;
+            
+        }
+
+    </script>
+</body>
+</html>
