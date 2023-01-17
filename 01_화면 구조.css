@@ -1,0 +1,361 @@
+@charset "utf-8";
+
+/* 전체적용 */
+
+        .wrap{
+            width: 1652px;
+            height: 1656px;
+        }
+
+        div{
+            box-sizing: border-box;
+            border: 0px solid black;
+            margin: auto;
+        }
+
+        header{
+            width: 940px;
+            height: 142px;
+        }
+
+        #header_1{
+            width: 940px;
+            height: 82px;
+            /* display: flex;
+            flex-wrap: wrap;
+            justify-content: center; */
+        }
+
+        #header_1 img{
+            padding-top: 20px;
+        }
+        
+        #header_1 div{
+            float: left;
+        }
+
+        #header_left{
+            width: 20%;
+            height: 100%;
+           
+        }
+
+        #header_center{
+            width: 45%;
+            height: 100%;            
+        }
+        
+        #logo{
+            margin-top: -10px;
+            margin-left: 180px;
+        }
+
+        #header_right{
+            width: 35%;
+            height: 100%;
+        }
+
+        #member{
+            margin-left: 0px;
+            list-style-type: none;
+            height: 100%;
+        }
+
+        #member>li{
+            float: left;
+            height: 100%;
+            text-align: center;
+        }
+
+        #member a{
+            text-decoration: none;
+            color: gray;
+            font-size: 12px;
+            font-weight: 600;
+            padding: 0px 3px;
+            width: 100%;
+            height: 100%;
+        }
+
+        #header_2{
+            width: 100%;
+            height: 60px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            /* 같은 간격으로 벌리기! */
+        }
+
+        p{
+            width: 156px;
+            height: 60px;
+            border: 0px solid red;
+            float: left;
+            margin: 1px;
+            text-align: center;
+            line-height: 3; /*px or em? or %? */
+            font-size: 20px;
+            font-family: '나눔고딕';
+        }
+
+        p:hover{
+            background-color: red;
+            color: white;
+        }
+        
+        #content{
+            width: 1652px;
+            height: 1360px; 
+        }
+
+        #content_1{
+            width: 100%;
+            height: 480px;
+            border-top: 2px solid red;
+        }
+
+        .slider{
+            width: 1652px;
+            height: 480px;
+            position: relative;
+            margin: 0 auto;
+            overflow: hidden; /*현재 슬라이드 오른쪽에 위치한 나머지 슬라이드들이 보이지 않도록 가림*/
+        }
+
+        .slider input[type=radio]{
+            display: none;
+        }
+
+        /*이미지 목록 배치 -> 기본적으로 슬라이드 영영 크기 오른 쪽 바깥에 위치 시키기*/
+        ul.imgs{
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+
+        ul.imgs li{
+            position: absolute;
+            width: 1652px;
+            transition-delay: 1s; /*새 슬라이드가 이동해 오는 동안 이전 스슬라이드 이미지가 배경이 보이도록 지연*/
+            padding: 0;
+            margin: 0;
+        }
+
+        .bullets{
+            position: absolute;
+            left: 50%;
+            transform: translateX(0%);
+            bottom: 10px;
+            z-index: 2;
+        }
+
+        .bullets label{
+            display: inline-block;
+            border-radius: 50%;
+            background-color: gray;
+            width: 10px;
+            height: 10px;
+            cursor: pointer;
+            margin: 2px;
+        }
+
+        .slider input[type=radio]:nth-child(1):checked~.bullets>label:nth-child(1){
+            background-color: #fff;
+        }
+        
+        .slider input[type=radio]:nth-child(2):checked~.bullets>label:nth-child(2){
+            background-color: #fff;
+        }
+        
+        .slider input[type=radio]:nth-child(3):checked~.bullets>label:nth-child(3){
+            background-color: #fff;
+        }
+        
+        .slider input[type=radio]:nth-child(4):checked~.bullets>label:nth-child(4){
+           background-color: #fff;
+        }
+
+        .slider input[type=radio]:nth-child(1):checked~ul.imgs>li:nth-child(1){
+            left: 0;
+            transition: 0.5s;
+            z-index: 1;
+        }
+        .slider input[type=radio]:nth-child(2):checked~ul.imgs>li:nth-child(2){
+            left: 0;
+            transition: 0.5s;
+            z-index: 1;
+        }
+        .slider input[type=radio]:nth-child(3):checked~ul.imgs>li:nth-child(3){
+            left: 0;
+            transition: 0.5s;
+            z-index: 1;
+        }
+        .slider input[type=radio]:nth-child(4):checked~ul.imgs>li:nth-child(4){
+            left: 0;
+            transition: 0.5s;
+            z-index: 1;
+        }
+
+        #content_2{
+            width: 940px;
+            height: 272px;
+            margin-top: 40px;
+        }
+
+        #content_2 div{
+            box-sizing: border-box;
+            border: 0px solid red;
+            float: left;
+        }
+
+        #content_left{
+            width: 25%;
+            height: 100%;
+        }
+
+        #content_center{
+            width: 50%;
+            height: 100%;
+        }
+
+        #center_2{
+            margin-top: 22px;
+            margin-left: 25px;
+        }
+
+        #center_2_2{
+            margin-top: 13px;
+        }
+
+        #content_right{
+            width: 25%;
+            height: 100%;
+            padding-left: 7px;
+        }
+
+        #content_3{
+            width: 940px;
+            height: 152px;
+            margin-top: 30px;
+        }
+
+        #con3_2{
+            padding-left: 2px;
+        }
+
+        #content_4{
+            width: 940px;
+            height: 106px;
+            margin-top: 30PX;
+        }
+
+        #content_4 span{
+            font-size: 12px;
+            font-family: '나눔고딕';
+            color: #6f6f6f;
+        }
+
+        #content_4 div{
+            box-sizing: border-box;
+            border: 0px solid black;
+            float: left;
+        }
+
+        #content_4 a{
+            color: #6f6f6f;
+            text-decoration: none;
+        }
+
+        #con4_1{
+            width: 25%;
+            height: 100%;
+        }
+        #con4_2{
+            width: 25%;
+            height: 100%;
+        }
+        #con4_3{
+            width: 25%;
+            height: 100%;
+        }
+
+        #con4_4{
+            width: 25%;
+            height: 100%;
+            padding-top: 20px;
+        }
+
+        #con4_img{
+            margin-left: 28px;
+        }
+
+       /* #icon5{
+            padding: 0px 25px;
+            
+        }*/
+
+        #icon4, #icon5,#icon6{
+            padding: 0px 10.5px
+        }
+        
+        #icon5{
+            border-left: 0.5px dotted gray;
+            border-right: 0.5px dotted gray;
+        }
+        
+        #con4_text{
+            font-size: 12px;
+            font-family: 나눔고딕;
+            margin-left: 27px;
+        }
+
+        #content_5{
+            width: 940px;
+            height: 84px;
+            margin-top: 60PX;
+        }
+
+        #content_5{
+            width: 940px;
+            height: 84px;
+        }
+
+        div{
+            box-sizing:border-box;
+        }
+
+        hr{
+            width: 100%;
+            height: 3px;
+            background-color: #b5121b;
+        }
+
+
+        #footer{
+            width: 100%;
+            height: 148px;
+            background-color: #ba000c;
+        }
+
+        #footer1_1{
+            padding-top: 25px;
+            padding-left: 355px;
+        }
+
+        #footer1_1 a{
+            font-size: 11px;
+            font-family: 나눔고딕;
+            text-decoration: none;
+            color: #faeff0;  /*나중에 white로 컬러 바꿔줘야함*/
+        }
+
+        #footer2_1{
+            padding-left: 355px;
+        }
+
+        #footer2_1 li{
+            font-size: 11px;
+            font-family: 나눔고딕;
+            list-style-type: none;
+            color: #de898e;
+        }

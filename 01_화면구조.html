@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>project_화면구조</title>
+    <style>
+        div{
+            box-sizing: border-box;
+            border: 1px solid lightslategray;
+        }
+
+        .wrap{
+            width: 1629px;
+            height: 850px;
+            margin: auto;
+        }
+
+        .wrap>div{
+            width: 100%;
+        }
+
+        #header{
+            height: 94px;
+        }
+
+        #header>div{
+            height: 100%;
+            float: left;;
+        }
+
+    /*메뉴바 header_1 시작*/
+        #menu{
+            width: 565px;
+            height: 94px;
+            margin-left: 16px;
+        }
+
+        #menubar{
+           
+           margin: 0px;
+           list-style-type: none;
+           padding: 0px;
+           height: 100%;
+       }
+
+       #menubar>li{
+        
+           float: left;
+           width: 24.646%;
+           height: 100%;
+           text-align: center;
+       }
+
+       #menubar a{
+           text-decoration: none;
+           color: black;
+           font-size: 18px;
+           font-weight: 300;
+           padding: 30px 0px;
+
+           width: 100%;
+           height: 100%;
+
+           display: block;
+
+           line-height: 20px;
+       }
+
+       #menubar a:hover{font-size: 0px;}
+       #brand:hover::before{content: '소개해요'; font-size: 18px;}
+       #program:hover::before{content: '프로그램'; font-size: 18px;} 
+       #wellmate:hover::before{content: '웰 메이트'; font-size: 18px;}
+       #wellnessitem:hover::before{content: '웰니스 제품'; font-size: 18px;}
+
+       /*메뉴바 header_1 끝*/
+        
+
+       /*메뉴바 header_2 시작*/
+        #header_2{
+            width: 464px;
+            height: 94px;
+        }
+
+        #logo{
+            padding: 15px 150px
+        }
+
+        /*메뉴바 header_2 끝*/
+
+
+        /*메뉴바 header_3 시작*/
+        #header_3{
+            width: 563px;
+            height: 94px;
+        }
+
+        #menu_2{
+            list-style-type: none;
+            margin: 0px;
+            padding: 0px;
+            height: 100%;
+        }
+
+        #menu_2>li{
+            float: right;
+            width: 17%;
+            height: 100%;
+            text-align: center;
+            padding: 0;
+        }  
+
+        #menu_2 a{
+            text-decoration: none;
+            color: black;
+            font-size: 18px;
+            font-weight: 300px;
+
+            padding: 30px 0px;
+
+            width: 100%;
+            height: 100%;
+
+            display: block;
+
+            line-height: 20px;
+            
+        }
+
+        #menu_2 a:hover{color: gray;}
+
+        /*메뉴바 header_3 끝*/
+
+        #content_1{
+            height: 507.38px;
+        }
+
+        #content_2{
+            height: 744.28px;
+        }
+
+        #content_3{
+            height: 120px;
+        }
+
+        #content_4{
+            height: 755.95px;
+        }
+
+        #footer{
+            height: 572.08px;
+        }
+
+
+
+    </style>
+</head>
+
+<body>
+        <div class="wrap">
+            <div id="header">
+                <div id="menu">
+                    <ul id="menubar">
+                        <li><a href="" id="brand" target="_blank" >BRAND</a></li>
+                        <li><a href="" id="program">PROGRAM</a></li>
+                        <li><a href="" id="wellmate">WELL MATE</a></li>
+                        <li><a href="" id="wellnessitem">WELLNESS ITEM</a></li>
+                    </ul>
+                </div>
+
+                <div id="header_2">
+                    <a href=""><img src="img/로고.png" id="logo" width="134.23" height="58.95"></a>
+                </div>
+
+                <div id="header_3">
+                    <ul id="menu_2">
+                        <li id="menebar_2"><a href=""><img src="img/free-icon-open-menu-3945132.png" width="30" height="30"></a></li>
+                        <li id="mypage"><a href="">마이페이지</a></li>
+                        <li id="login"><a href="">로그인</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div id="content">
+                <div id="content_1"></div>
+                <div id="content_2"></div>
+                <div id="content_3"></div>
+                <div id="content_4"></div>
+            </div>
+
+            <div id="footer">
+                <div id="footer_1"></div>
+                <div id="footer_2"></div>
+                <div id="footer_2"></div>
+            </div>
+
+
+
+        </div>    
+</body>
+</html>
