@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>영역관련 스타일</title>
+    <style>
+        .test{
+            background-color: bisque;
+            border: 10px solid black; /*div요소는 border영역까지 포함*/
+            width: 100px;
+            height: 100px;
+            /*width와 height는 content영역의 크기를 의미*/
+        }
+
+        #test1{
+            padding: 100px;
+        }
+
+        #test2{
+            padding-top:50px;
+            padding-left:100px;
+        }
+
+        #test3{
+            padding: 50px 20px 10px 0px;
+        }
+
+        #test4{
+            margin: 50px;
+            /*주변에 있는 모든 요소들과 상하좌우로 각각  50px만큼의 여백이 생김*/
+        }
+
+        #test5{
+            margin-top: 50px;
+            margin-left: 20px;
+        }
+
+        #test6{
+            /*margin: 50px 30px 20px 0px;
+                   /*위  오른쪽 아래 왼쪽*/ 
+            /*12시방향으로 시작해서 시계 방향 순으로 스타일을 부여함*/
+            margin :auto;
+        }
+    </style>
+
+</head>
+<body>
+
+    <!--요소 영역 = content + padding + border-->
+    <h1>여백 및 간격 관련 스타일</h1>
+
+    <h4>기준 div</h4>
+    <div class="test">기준 div</div>
+    
+    <hr>
+
+    <h3>padding</h3>
+    <p>
+        내용물 영역(content)과 테두리 영역(border)사이의 거리(여백)를 조절하는 스타일 속성
+        상하좌우로 지정한 px만큼 공백이 생기는 속성
+    </p>
+
+    <div id="test1" class="test">컨텐츠 영역</div>
+    <b>padding:100px;</b> <br><br>
+
+    <div id="test2" class="test">컨텐츠 영역</div>
+    <b>padding-top:50px; padding-left:100px;</b> <br><br>
+    <!--위아래로 공백을 지정-->
+
+    <div id="test3" class="test">컨텐츠 영역</div>
+    <b>padding : 50px 20px 10px 0px</b> <br><br>
+    <!--         위   오른쪽 아래 왼쪽 순으로 공백의 길이를 지정해둠                -->
+
+    <hr>
+
+    <h3>margin</h3>
+    <p>
+        타 요소들간의 간격을 조정할 때 사용
+        margin auto : 화면의 크기가 변할때마다 좌우 간격을 자동으로 가운데로 맞춰 줌
+    </p>
+    <div id="test4" class="test">컨텐츠 영역</div>
+    <b>margin:50px</b> <br><br>
+
+    <div id="test5" class="test">컨텐츠 영역</div>
+    <b>margin-top:50px; margin-left:20px;</b> <br><br>
+    <!--위아래로 공백을 지정-->
+
+    <div id="test6" class="test">컨텐츠 영역</div>
+    <b>margin : 50px 30px 20px 0px</b> <br><br>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</body>
+</html>
