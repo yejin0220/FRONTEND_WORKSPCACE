@@ -7,21 +7,74 @@
     <title>회원가입</title>
 </head>
 <body>
+    <h1>Practice3</h1>
     <form>
         <fieldset>
             <legend>회원가입</legend>
-            아이디 : <input type="text" onkeyup="userId"> <div id="idcheck"></div>   <br>
-            비밀번호 : <input type="password" id="userPwd">         <br><br>
-            비밀번호 확인 : <input type="password" id="userPwd1">   <br><br>
-            이름 : <input type="text" id="userName">                <br><br>
-            <button onclic="join();">회원가입</button> 
+            아이디 : <input type="text" id="userId"> <span id="span_id"></span>                <br><br>
+            비밀번호 : <input type="password" id="userPwd">                                      <br><br>
+            비밀번호 확인 : <input type="password" id="checkPwd"> <span id="span_pwd"></span>  <br><br>
+            이름 : <input type="text" id="userName">                                            <br><br>
+            <button type="button" id="btn">회원가입</button> 
         </fieldset>
     </form>
 
     <script>
-        function userId(){
-            let 
+        //아이디 중복체크
+        //표준이벤트 부여 방식 -> 포인터가 올라갈때마다
+        document.getElementById("userId").addEventListener('keyup',checkId);
 
+        function checkId(){
+            let userId = document.getElementById("userId").value; //사용자가 입력한 userId값
+            
+            if(userId==='user01'){
+                document.getElementById("span_id").innerHTML = "이미 존재하는 아이디입니다.";
+                document.getElementById("span_id").style.color ="red";
+            }else{
+                document.getElementById("span_id").innerHTML = "사용가능한 아이디입니다.";
+                document.getElementById("span_id").style.color ="green";
+            }
+        }
+
+
+        //비밀번호 확인
+        document.getElementById("checkPwd").addEventListener('blur',checkPwd);
+        function checkPwd(){
+            let userPwd = document.getElementById("userPwd").value;
+            let checkPwd = document.getElementById("checkPwd").value;
+            let spanPwd = document.getElementById("span_pwd");
+
+            if (userPwd === checkPwd){
+                spanPwd.innerHTML ="비밀번호가 일치합니다.";
+                spanPwd.style.color = "green";
+            }else{
+                spanPwd.innerHTML ="비밀번호가 일치하지 않습니다.";
+                spanPwd.style.color = "red";
+            }
+        }
+
+        //하나라도 입력하지 않은 필드 알림창 + 필드로 커서 옮겨가기
+        //
+        let btn = document.getElementById("btn");
+        userId.addEventListener('keyup', checkId);
+        InputcheckPwd.addEventListener('blur', checkPwd);
+        btn.addEventListener('click', validation);
+
+        function validation(){
+            //1.입력하지 않은 값이 있는지 체크
+            let inputs = document.getElementsByTagName('input');
+            let inputNames = ["아이디","비밀번호","비밀번호 확인","이름"];
+            for(let i =0; i<inputs.length; i++){
+                if(inputs[i].value.length == 0){ //아무값도 입력하지 않았다면 길이는 0
+                    alert(inputNames[i]+"를 입력해주세요");
+                    inputs[i].focus();
+                    return;
+                }
+            }
+
+            //2. 사용할 수 있는 아이디인지 체크
+
+            //3. 비밀번호가 있는지 체크
         }
     </script>
 </body>

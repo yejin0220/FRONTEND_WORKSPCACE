@@ -64,6 +64,7 @@
         }
 
         //익명함수를 화살표 함수로 변형
+        //익명함수의 화살표 안에서는 return을 명시해줘야 함.
         btn2.onclick= () => {
             document.getElementById("area2").innerHTML += "이벤트 핸들러 함수가 호출됨";
             return 1;
