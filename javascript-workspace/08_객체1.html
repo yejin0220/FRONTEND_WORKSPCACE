@@ -42,6 +42,7 @@
             let arr = ['메딘',40000,{"kind":"big"},[10,12,15]];
             //자바스크립트의 배열 == 자바의 컬렉션(ArrayList)
 
+            //*객체선언*
             let obj = new Object();
             let obj2 = {};
 
@@ -192,7 +193,7 @@
             let eng = Number(document.getElementById("eng").value);
 
             let student = {
-                //name : name => 속성명과 속성값에 들어가는 변수명이 동일할 경우 :속성값은 생략가능하다.
+                //name : name => 속성명과 속성값에 들어가는 변수명이 동일할 경우 ":속성값"은 생략가능하다.
                 name, 
                 kor,
                 math,
@@ -220,7 +221,7 @@
 
             //with 
             with(student){
-                area5.innerHTML += "학생이름 : "+student.name+"<br>";
+                area5.innerHTML += "학생이름 : "+name+"<br>";
                 area5.innerHTML += "국어점수 : "+kor+"<br>";
                 area5.innerHTML += "수학점수 : "+math+"<br>";
                 area5.innerHTML += "영어점수 : "+eng+"<br>";
@@ -278,7 +279,12 @@
             area6.innerHTML += student;    
         }
     </script>
-    
+
+
+
+
+
+
 
 
 

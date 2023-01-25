@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원가입 폼</title>
+</head>
+<body>
+    
+    <fieldset>
+        <form action="" method="">
+            *아이디 : <input type="text" name="userId" id="userId"><br>
+            <label style="font-size: 11px; color: gray;">첫글자는 반드시 영문자로, 그리고 영문자, 숫자를 포함하여 총 4~12자로 입력하시오</label><br><br>
+            
+            *비밀번호 : <input type="password" name="userPwd" id="userPwd"><br>
+            <label style="font-size: 11px; color: gray;">영문자, 숫자, 특수문자(!@#%^)로 총 8~15자로 입력하시오</label><br><br>
+
+            *비밀번호 확인 : <input type="password" id="checkPwd"><br>
+            <label style="font-size: 11px; color: gray;">위의 비밀번호와 일치하게 입력하시오</label><br><br>
+
+            *이름 : <input type="text" name="userName" id="userName"><br>
+            <label style="font-size: 11px; color: gray;">한글로만 이루어져야 하며, 2글자 이상으로 입력하시오</label><br><br>
+
+            *이메일 : <input type="text" id="email"><br>
+            <label style="font-size: 11px; color: gray;">이메일 형식에 맞춰서 입력하시오</label><br><br>
+
+            *취미 : <input type="text" id="hobby" placeholder="축구, 농구, 야구, 독서 등"><br><br>
+
+            *거주지 : <select>
+                        <option selected>서울 </option>
+                        <option>경기</option>
+                        <option>강원</option>
+                        <option>충청</option>
+                        <option>전남</option>
+                    </select>
+            
+            <br><br>
+            <input type="submit" value="회원가입" onclick="return validate();">
+            <button type="reset">취소</button>
+        </form>
+    </fieldset>
+
+    <script>
+        function validate(){
+
+            //아이디 : 첫글자는 반드시 영문자 + 영문자, 숫자를 포함하여 총 4~12글자로 입력
+            let userId = document.getElementById("userId").value;
+            let regExp = /^[a-zA-Z][a-zA-Z0-9]{4,12}$/;
+
+            if(!regExp.test(userId)){
+                alert("유효한 아이디가 아닙니다.");
+                document.getElementById("userId").select();
+                return false;
+            }
+
+            //비밀번호 : 영문자, 숫자, 특수문자 총8~15글자로 입력
+            let userPwd = document.getElementById("userPwd").value;
+            regExp2 = /^[\w\d!@#%^]{8,15}$/;
+            
+            if(!regExp2.test(userPwd)){
+                alert("유효한 비밀번호가 아닙니다.");
+                document.getElementById("userPwd").select();
+                return false;
+            }
+
+            //비밀번호 확인
+            if(userPwd != checkPwd){
+                alert("비밀번호가 일치하지 않습니다.");
+                document.getElementById("checkPwd").select();
+                return false;
+            }
+
+            //이름 : 한글로만 이루어져야 하며, 2글자 이상
+            let userName = document.getElementById("userName").value;
+            let regExp3 = /^[ㄱ-ㅎ ㅏ-ㅣ 가-힣]{2,}$/;
+            if(!regExp3.test(userName)){
+                alert("유효한 이름이 아닙니다.");
+                return false;
+            }
+
+            //이메일 : 한글자 이상 입력
+            let email=document.getElementById("email").value;
+            let regExp4 = /^+$/;
+            if(!regExp4.test(email)){
+                alert("유효한 이메일이아닙니다.");
+                return false;
+            }
+            
+            
+
+        }
+    </script>
+
+</body>
+</html>

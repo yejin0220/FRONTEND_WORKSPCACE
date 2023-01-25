@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>김예진_포트폴리오</title>
+    <style>
+        .title_2{
+            background-color: coral;
+            color: white;
+            text-align: center;
+            font-weight: 900;
+            
+        }
+
+        #btn{
+            margin-left: 80px;
+        }
+
+        table{
+            box-sizing: border-box;
+            width: 700px;
+
+        }
+        #content_title{
+           display: block;
+           float: left;
+           margin-top: 60px;
+           margin-right: 5px;
+        }
+
+        #t1, #t2, #t3,#t4,#t5{background-color: bisque; font-size: 12px; }
+
+
+
+
+        
+    </style>
+</head>
+<body>
+
+    <h1>포트폴리오 문제</h1>
+    <hr>
+    
+    <form action="insert.no" method="=post"></form>
+        <fieldset>
+            <legend>공지사항 작성하기</legend>
+            <b>제목</b>
+            <input type="text" name="title" placeholder="제목을 입력하시오" size="30"> <br>
+            <br>
+            <b id="content_title">내용</b> <textarea cols="32" rows="10" placeholder="내용을 입력하시오" style="resize: none;"></textarea>
+         
+            <br><br>
+
+            <b>첨부파일</b> <input type="file" name="uploadFile">
+            <br><br>
+            
+            <input type="button" value="작성하기" id="btn">
+        </fieldset>
+        
+    <hr>
+
+    <table border="1">
+        <tr class="title_2">
+            <td>번호</td>
+            <td colspan="5">제목</td>
+            <td>작성자</td>
+            <td>작성일</td>
+            <td>조회수</td>
+        </tr>
+        <tr id="t1">
+            <td>9</td>
+            <td colspan="4">공지사항 제목9</td>
+            <td id="btn1"><input type="submit" value="바로가기"></td>
+            <td>user01</td>
+            <td>2021-03-29</td>
+            <td>34</td>
+        </tr>
+        <tr id="t2">
+            <td >6</td>
+            <td colspan="4">공지사항 제목6</td>
+            <td><input type="submit" value="바로가기"></td>
+            <td>answ445</td>
+            <td>2021-03-12</td>
+            <td>67</td>
+        </tr>
+        <tr id="t3">
+            <td >3</td>
+            <td colspan="4">공지사항 제목3</td>
+            <td><input type="submit" value="바로가기"></td>
+            <td>testg12</td>
+            <td>2021-03-01</td>
+            <td>98</td>
+        </tr>
+        <tr id="t4">
+            <td >2</td>
+            <td colspan="4">공지사항 제목2</td>
+            <td><input type="submit" value="바로가기"></td>
+            <td>palwe3</td>
+            <td>2021-01-02</td>
+            <td>85</td>
+        </tr>
+        <tr id="t5">
+            <td >1</td>
+            <td colspan="4">공지사항 제목1</td>
+            <td><input type="submit" value="바로가기"></td>
+            <td>xml23</td>
+            <td>2020-12-24</td>
+            <td>124</td>
+        </tr>
+        <tr class="title_2">
+            <td colspan="7">전체공지사항 갯수</td>
+            <td colspan="2">5개</td>
+        </tr>
+    </table>
+</body>
+</html>
