@@ -20,38 +20,50 @@
     <fieldset>
         <legend>구매정보</legend>
             <ul>
-                <li>구매자 : <input type="text" name="userName" placeholder="구매자의 이름을 입력하세요" size="30"></li>
-                <li>상품명 : <input type="text" name="product" placeholder="구매 상품명을 입력하세요" size="30"></li>
-                <li>가격 : <input type="number" name="price" placeholder="구매 가격을 입력하세요" ></li>
-                <li>구매수량 : <input type="number" name="numberOf" placeholder="최소 10" min="10" max="100" step="10"></li>
-                <li>납품등급 : <input type="range" name="score" min="1" max="9" step="2"></li>
-                <li>기타사항 : <textarea name="other" rows="10" cols="30"></textarea> </li>
+                <li>구매자 : <input type="text" name="userName" id="userName" placeholder="구매자의 이름을 입력하세요" size="30"></li>
+                <li>상품명 : <input type="text" name="product" id="product" placeholder="구매 상품명을 입력하세요" size="30"></li>
+                <li>가격 : <input type="number" name="price" id="price" placeholder="구매 가격을 입력하세요" ></li>
+                <li>구매수량 : <input type="number" name="numberOf" id="numberOf" placeholder="최소 10" min="10" max="100" step="10"></li>
+                <li>납품등급 : <input type="range" name="score" id="score" value="0" min="1" max="9" step="2"></li>
+                <li>기타사항 : <textarea name="other" id="other" rows="10" cols="30"></textarea> </li>
             </ul>
     </fieldset>  
 
     <br>
-    <button onclick="text();">입력 값 출력하기</button>
-    <div id="textbox"></div>
+    <button onclick="test();">입력 값 출력하기</button>
+    <div id="div"></div>
     <script>
-        function text(){
+        function test(){
 
-            let userName=document.getElementsByName("userName").value;
-            let product=document.getElementsByName("product").value;
-            let price = document.getElementsByName("price").value;
-            let numberOf = document.getElementsByName("numberOf").value;
-            let score = document.getElementsByName("score").value;
-            let other = document.getElementsByName("other").value;
+            // let userName=document.getElementsById("userName").value;
+            // let product=document.getElementsById("product").value;
+            // let price = document.getElementsById("price").value;
+            // let numberOf = document.getElementsById("numberOf").value;
+            // let score = document.getElementsById("score").value;
+            // let other = document.getElementsById("other").value;
 
-            let textbox = document.getElementById("textbox");
-            textbox.innerHTML += "구매자명 : "+userName+"님 <br>"
-                               +"상품명 : "+product+"<br>"
-                               +"가격 : "+price+"만원"<br>
-                               +"구매 수량 : "+numberOf+"개 <br>"
-                               +"납품 등급 : "+score+"등급"
-                               +"기타사항 : "+other+"<br>";
+            // let textbox = document.getElementById("textbox").value;
+            // textbox.innerHTML += "구매자명 : "+userName+"님 <br>"
+            //                    +"상품명 : "+product+"<br>"
+            //                    +"가격 : "+price+"만원"<br>
+            //                    +"구매 수량 : "+numberOf+"개 <br>"
+            //                    +"납품 등급 : "+score+"등급"
+            //                    +"기타사항 : "+other+"<br>";
 
+            let inputs = document.getElementsByTagName("input");
+            let div = document.getElementById("div");
+            
+            div.innerHTML += "구매자명 : "+inputs[0].value+"님 <br>"
+                          +  "상품명 : "+inputs[1].value+"<br>"
+                          + "가격 : "+inputs[2].value+"만원 <br>"
+                          + "구매수량 : "+inputs[3].value+"개 <br>"
+                          + "납품등급 : "+inputs[4].value+"등급 <br>"
+                          + "기타사항 : "+document.getElementById("other").value;
+
+                          
         }
     </script>
+
 
     
 </body>
