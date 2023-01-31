@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
     <title>헤더</title>
     <style>
   
@@ -13,24 +14,13 @@
             border: 1px solid black;
         }
 
-        /* div{
-            border: 0px solid red;
-            display: inline;
-        } */
-        /* #header_1{
-            width: 20%;
-            height: 100%;
-        }
 
-        #navigator{
-            width: 25%;
-            height: 100%;
-        } */
-        #navi{
+         #navi{
             margin: 0;
             list-style: none;
             padding: 0;
         }
+
         #navi>li{
             float: left;
             text-align: center;
@@ -41,34 +31,27 @@
             text-decoration: none;
             color: gray;
         }
-        #navi a:hover{
-            color : white;
-        }
-        
-        #navi>li>ul>li{
+       #navi>li>ul>li{
             text-align: start;
             list-style: none;
             font-size: 17px;
-            
         }
         #navi>li>ul>li :hover{
            color: purple;
         }
-        #navi>li>ul {
-            padding: 0;
-            display: none;
-        }
-        #navi>li>a:hover+ul{
+        /* #navi>li>a:hover+ul{
             display: block;
         }
         #navi>li>ul:hover{
             display: block;
-        }
+        } */
         #content_menu{
             width: 240px;
             height: 250.19px;
             border-radius: 20px;
             background: navy;
+            display: none;
+            padding: 0;
         }
         #content_menu>li>a>span{vertical-align: top;}
         #content_menu li{padding: 14px 20px;}
@@ -78,35 +61,12 @@
             height: 192.64px;
             border-radius: 20px;
             background: navy;
+            display: none;
+            padding: 0;
         }
         
         #guide_menu>li>a>span{vertical-align: top;}
         #guide_menu li{padding: 14px 20px;}
-
-        /* #header_3{
-            width: 35%;
-            height: 100%;
-        }
-
-        #header_4{
-            width: 20%;
-            height: 100%;
-        } */
-
-
-        #button{
-            width:123.2px;
-            height: 40px;
-            background: white;
-            border-radius: 10px;
-        }
-
-        #button>span{
-            font-size: 15px;
-        }
-
-
-
 
     </style>
 </head>
@@ -119,7 +79,7 @@
 
         <div id="navigator">
             <ul id="navi">
-                <li><a href="">콘텐츠</a>
+                <li ><a href="" id="header_content">콘텐츠</a>
                     <ul id="content_menu">
                         <li><a href=""><img src="https://studio.zepeto.me/img/gnb_product_icon_item.svg" style="margin-right: 15px;"><span>아이템</span></a></li>
                         <li><a href=""><img src="https://studio.zepeto.me/img/gnb_product_icon_world.svg" style="margin-right: 15px;"><span>월드</span></a></li>
@@ -139,16 +99,19 @@
                 <li><a href="">지원</a></li>
             </ul>
         </div>
-        <div id="header_4">
-            
-        </div>
-
-        <div id="header_3">
-            <button id="button"><span>콘텐츠 관리</span></button>
-            <span id="sound"><a href=""><img src="resources/image/free-icon-loudspeaker-77686.png" width="24.21px" height="24.16px"></a></span>
-        </div>
-
+        
     </div>
-    
+    <script>
+        $(function(){
+            $("#content_menu").click(function(){
+                let $d = $(this).children("ul");
+
+                if($d.css("display")=="none"){
+                    $d.slideDown(1000);
+                }
+            })
+        })
+    </script>
+
 </body>
 </html>
