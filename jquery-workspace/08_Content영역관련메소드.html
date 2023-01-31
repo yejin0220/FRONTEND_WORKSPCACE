@@ -70,9 +70,10 @@
             $(".class1") //[div, div, div]
             .html(function(index, html){ //첫번째 div요소를 가져와서 html메서드를 실행시키는데, 매개변수로 익명함수가 전달
                 //html메서드 내부에서 전달받은 함수를 호출
-                return "<h1>인덴스 : "+index+", content 내용 : "+html+"</h1>";
+                return "<h1>인덱스 : "+index+", content 내용 : "+html+"</h1>";
             })
             
+          
             /*
                 해당 콜백함수가 호출될때 마다 첫번째 인자값으로는 순차적으로 접근하는 요소의 인덱스 수 전달
                                             두번째 인자값으로는 접근하는 요소의  content영역값(innerHTML 속성값)을 전달
@@ -121,6 +122,7 @@
             $(".class2").text(function(index, text){
                 return "<h1>인덱스 위치는"+index+", 내용은 : "+text+"</h1>"; //html 코드는 코드가 아닌 문자형식으로 출력
         })
+    });
     </script>
 
 
