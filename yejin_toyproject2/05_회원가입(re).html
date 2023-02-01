@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        .join{
+            width: 100%;
+            height: 960.46px;
+        }
+        div{
+            border: 1px solid black;
+            box-sizing: border-box;
+        }
+
+        .join_header{ height: 80px;}
+        
+        #btn{
+            margin-top: 30px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .button{
+            width: 133.33px;
+            height: 40px;
+        }
+
+        #btn>span{font-size: 14px;}
+
+        .join_content{
+            height: 676.458px;
+            width: 100%;
+            
+        }
+        #join_text{
+            font-size: 32px;
+            line-height: 40px;
+            font-weight: 700;   
+        }
+
+        .join_content{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        #pr_info img{
+            width: 16px;
+            height: 16px;
+        }
+        #qr_count{color: #75757a; font-size: 15px;}
+        #qr_info{color: #99999c; font-size: 15px;}
+        #qr_info2{color : #c7c7c9; font-size: 14px;}
+        #qr_last>span{color:  rgb(92, 70, 255); font-size: 15px;}
+
+
+
+
+
+
+    </style>
+</head>
+<body>
+
+    <div class="join">
+        <div class="join_header"></div>
+
+        <div class="join_content">
+          <div id="join_text">제페토 계정을 입력하세요.</div>
+          
+          <form action="">
+            <div id="btn">
+                <button type="button" class="button" id="qr"><span>QR코드</span></button>
+
+                <button type="button" class="button" id="phone"><span>전화번호</span></button>
+
+                <button type="button" class="button" id="idemail"><span>아이디·이메일</span></button>
+            </div>
+
+            <div id="qr_content">
+                <div id="qr_code" style="width:150px; height: 150px;"></div>
+                <div id="qr_reset"><span>코드 초기화</span></div>
+                <div id="qr_text">로그인 하시려면 제패토 앱을 열고 <br> QR코드를 스캔해주세요.</div>
+                <div id="qr_info">
+                    <img src="resources/image/scas.png" style="margin-right: 5px;">프로필  <img src="resources/image/-.png">
+                    <img src="resources/image/qr-.png" style="margin-right: 6px;">내 코드 <img src="resources/image/-.png">
+                    <img src="resources/image/qr- (1).png" style="margin-right: 5px;">스캔하기
+                </div>
+                <div id="qr_count">QR 초기화</div>
+                <div id="qr_info2">또는</div>
+                <div id="qr_icon">
+                    <a href="https://www.facebook.com/login.php?skip_api_login=1&api_key=381492882293425&kid_directed_site=0&app_id=381492882293425&signed_next=1&next=https%3A%2F%2Fwww.facebook.com%2Fv2.8%2Fdialog%2Foauth%3Fresponse_type%3Dcode%26client_id%3D381492882293425%26scope%3Dpublic_profile%2Bemail%26state%3D-IU7xoPCwwKT-LtD4_5Kt4_2IfE5E2e9oCnbXoEiNZk%253D%26redirect_uri%3Dhttps%253A%252F%252Fapi-studio.zepeto.me%252Flogin%252Foauth2%252Fcode%252Ffacebook%26ret%3Dlogin%26fbapp_pres%3D0%26logger_id%3D91cf8a41-85fc-42a5-8dba-fa8414a5f947%26tp%3Dunspecified&cancel_url=https%3A%2F%2Fapi-studio.zepeto.me%2Flogin%2Foauth2%2Fcode%2Ffacebook%3Ferror%3Daccess_denied%26error_code%3D200%26error_description%3DPermissions%2Berror%26error_reason%3Duser_denied%26state%3D-IU7xoPCwwKT-LtD4_5Kt4_2IfE5E2e9oCnbXoEiNZk%253D%23_%3D_&display=page&locale=ko_KR&pl_dbl=0">
+                        <img src="https://studio.zepeto.me/_next/static/media/img_44_facebook.478744e6.svg"></a>
+
+                    <a href="https://access.line.me/oauth2/v2.1/login?returnUri=%2Foauth2%2Fv2.1%2Fauthorize%2Fconsent%3Fresponse_type%3Dcode%26client_id%3D1617188544%26scope%3Dprofile%26state%3DHtKuguGAf68B5L-aHHl-m28cRs8ZQ9H-NOyg4ENDdo4%253D%26redirect_uri%3Dhttps%253A%252F%252Fapi-studio.zepeto.me%252Flogin%252Foauth2%252Fcode%252Fline&loginChannelId=1617188544&loginState=GX1PyGAFvwX1r0piwXuHU7#/">
+                        <img src="https://studio.zepeto.me/_next/static/media/img_44_line.80da9096.svg"></a>
+
+                    <a href="https://api.twitter.com/oauth/authenticate?oauth_token=Xf-8qQAAAAAA8xynAAABhg28Kg8&force_login=false">
+                        <img src="https://studio.zepeto.me/_next/static/media/img_44_twitter.2bf45998.svg">
+                    </a>
+
+                    <a href="https://accounts.kakao.com/login/?continue=https%3A%2F%2Fkauth.kakao.com%2Foauth%2Fauthorize%3Fresponse_type%3Dcode%26state%3Ddaek4HctdbYMTxN1hr5XyRhPn7hrK4fwzOVzcWI0Y_c%253D%26redirect_uri%3Dhttps%253A%252F%252Fapi-studio.zepeto.me%252Flogin%252Foauth2%252Fcode%252Fkakao%26code_challenge_method%3DS256%26through_account%3Dtrue%26client_id%3D6aae7fc3925627bdb8e92c283a78f65e%26code_challenge%3DCfEkngED_4XB3Iq7jItTa83ZePS54RL1lTyTENRc-e0">
+                        <img src="https://studio.zepeto.me/_next/static/media/img_44_kakaotalk.ea26cc06.svg">
+                    </a>
+                </div>
+                <div id="qr_last">제페토가 처음이신가요? <span><a> 앱 다운로드</a></sn></div>
+            </div>
+            
+           </form>
+        </div>
+    </div>
+    
+</body>
+</html>
