@@ -4,73 +4,67 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
     <title>헤더</title>
-    <style>
-  
-        .header{
-            width: 100%;
-            height: 80px;
-            border: 1px solid black;
-        }
-
-
-         #navi{
+    <style>    
+        
+        #navi{
             margin: 0;
             list-style: none;
             padding: 0;
         }
-
+        
         #navi>li{
             float: left;
             text-align: center;
             margin-left: 20px;
         }
+
         a{  
             font-size: 17px;
             text-decoration: none;
             color: gray;
         }
-       #navi>li>ul>li{
+
+        #navi>li>ul>li{
             text-align: start;
             list-style: none;
             font-size: 17px;
         }
-        #navi>li>ul>li :hover{
-           color: purple;
-        }
-        #navi>li>a:hover+ul{
-            display: block;
-        }
-        #navi>li>ul:hover{
-            display: block;
-        }
+
         #content_menu{
             width: 240px;
             height: 250.19px;
             border-radius: 20px;
             background: navy;
-            display: none;
-            padding: 0;
+            /* padding: 0; */
+            box-sizing: border-box;
         }
         #content_menu>li>a>span{vertical-align: top;}
-        #content_menu li{padding: 14px 20px;}
+        #content_menu li{width: 240px; height: 57.55px;}
+        #content_menu+li{padding-top: 5px;}
         
         #guide_menu{
             width: 240px;
             height: 192.64px;
             border-radius: 20px;
             background: navy;
-            display: none;
-            padding: 0;
+            /* display: none; */
+            /* padding: 0; */
+            padding-top: 10px;
         }
         
         #guide_menu>li>a>span{vertical-align: top;}
         #guide_menu li{padding: 14px 20px;}
 
+
+        
+
+        
+
     </style>
 </head>
 <body>
+
 
     <div class="header">
         <div id="header_1">
@@ -101,17 +95,5 @@
         </div>
         
     </div>
-    <!-- <script>
-        $(function(){
-            $("#content_menu").click(function(){
-                let $d = $(this).children("ul");
-
-                if($d.css("display")=="none"){
-                    $d.slideDown(1000);
-                }
-            })
-        })
-    </script> -->
-
 </body>
 </html>
