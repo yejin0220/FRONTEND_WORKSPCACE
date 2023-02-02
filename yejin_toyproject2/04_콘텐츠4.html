@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <title>콘텐츠 4</title>
     <style>
         #content_4{
@@ -139,7 +140,7 @@
     </style>
 </head>
 <body>
-    <div id="content_4">
+    <div data-aos="fade-up" id="content_4">
         <div id="content4_text">
             <h2>이제 많은 브랜드가 <br> 제페토와 함께</h2>
             <p>전 세계의 다양한 브랜드가 제페토에서 성공적인 비즈니스를 펼치고 있습니다.</p>
@@ -217,20 +218,11 @@
             </div>
         </div>
     </div>
+    <script>
+        AOS.init();
+      </script>
 
-    <!-- <script>
-        $(function(){
-            let time=600;
 
-            $("#content4").animate({opacity : '1'},time,function(){
-                $(".imgline1").animate({opacity : '1'},time,function(){
-                    $(".imgline2").animate({opacity:'1'},time,function(){
-                        $(".imgline3").animate({opacity:'1'},time)
-                    })
-                })
-            })
-        })
-    </script> -->
 
     
 </body>
