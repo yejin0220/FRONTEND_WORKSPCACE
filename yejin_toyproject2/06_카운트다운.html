@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>카운트다운</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+</head>
+
+<body>
+
+    <span id="MyTimer">01:00</span>
+    <button type="button" id="click" style="display: none;">코드 초기화</button>
+
+    <script>
+        function startTimer(duration, display) {
+            var timer = duration, minutes, seconds;
+            var interval = setInterval(function () {
+                minutes = parseInt(timer / 60, 10)
+                seconds = parseInt(timer % 60, 10);
+
+                minutes = minutes < 10 ? "0" + minutes : minutes;
+                seconds = seconds < 10 ? "0" + seconds : seconds;
+
+                display.textContent = minutes + ":" + seconds;
+
+                if (--timer < 0) {
+                    timer = duration;
+                }
+                if (timer === 0) {
+                    clearInterval(interval);
+                    // display.textContent = "코드 초기화";
+                    document.getElementById("MyTimer").style.display = "none";
+                    document.getElementById("click").style.display = "block";
+                }
+            }, 1000);
+        }
+
+        window.onload = function () {
+            /* 기본값 10(분)입니다. */
+            var minutes = 0.05;
+
+            var fiveMinutes = (60 * minutes) - 1,
+                display = document.querySelector('#MyTimer');
+            startTimer(fiveMinutes, display);
+        };
+
+        $("#click").click(function () {
+            $("#MyTimer").css("display","block");
+            // startTimer(fiveMinutes, display);
+            
+        });
+
+
+    </script>
+</body>
+
+</html>

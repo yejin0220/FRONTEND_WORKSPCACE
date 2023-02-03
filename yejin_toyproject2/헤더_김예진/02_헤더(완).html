@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>헤더(완)_김예진</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <style>
+        .header{
+            width: 100%;
+            height: 80px;
+            border: 1px solid black;
+            background-color: #5c46ff;
+        }
+
+        .header>div{
+            box-sizing: border-box;
+            border: 1px solid red;
+            float: left;
+        }
+
+        #header_1{
+            width: 13%;
+            height: 100%;
+            padding: 28.5px 60px;
+        }
+
+        #navigator{
+            width: 72%;
+            height: 100%;
+        }
+        #newIcon{
+            margin: 8px 0px 0px 430px;
+            display: block;
+        }
+        #navi{
+            margin: 0;
+            list-style: none;
+            padding: 0;
+        }
+
+        #navi>li{
+            float: left;
+            text-align: center;
+            margin-left: 30px;
+        }
+        .header_a{  
+            font-size: 17px;
+            text-decoration: none;
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .headera_1{
+            color: black;
+            text-decoration: none;
+        }
+        .headera_1:hover{color:#5c46ff}
+        .navi_bar2:hover{
+            color: white;
+            font-weight: bold;
+        }
+
+        #navi>li>ul>li{
+            text-align: start;
+            list-style: none;
+            font-size: 17px;
+        }
+        #navi>li>a:hover+ul{
+            display: block;
+        }
+
+        #navi>li>ul:hover{display: block;}
+       
+        #header_content{position: relative;}
+
+        #content_menu{
+            width: 240px;
+            height: 250.19px;
+            border-radius: 20px;
+            background: white;
+            display: none;
+            padding: 0;
+            position: absolute;
+            box-shadow: 0px 3px 13px 0px rgb(0, 0, 0, 0.05) ;
+        }
+
+        #content_menu>li>a>span{vertical-align: top;}
+        #content_menu li{padding: 14px 20px;}
+        #guide_content{position: relative;}
+        #guide_menu{
+            width: 240px;
+            height: 192.64px;
+            border-radius: 20px;
+            background: white;
+            display: none;
+            padding: 0;
+            position: absolute;
+            box-shadow: 0px 3px 13px 0px rgb(0, 0, 0, 0.05) ;
+        }
+        #guide_menu>li>a>span{vertical-align: top;}
+        #guide_menu li{padding: 14px 20px;}
+        
+
+        #header_3{
+            width: 15%;
+            height: 100%;
+            padding: 20px 0px 0px 70px;
+        }
+
+        #button{
+            width:123.2px;
+            height: 40px;
+            background: white;
+            border-radius: 7px;
+            border: 2px solid white;
+            background-color: #5c46ff;
+            color: white;
+        }
+
+        #button>span{
+            font-size: 15px;
+        }
+
+        #sound{
+            vertical-align: middle;
+            margin-left: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div id="header_1">
+            <a href=""><img src="resources/image/제페토로고 흰색.png" ></a>
+        </div>
+
+        <div id="navigator">
+            <img src="https://studio.zepeto.me/img/icon_new_bubble.svg" id="newIcon" width="28px" height="20px">
+            <ul id="navi">
+                <li id="header_content"><a href="" class="navi_bar1 header_a">콘텐츠 ∨</a>
+                    <ul id="content_menu">
+                        <li ><a href="" class="headera_1"><img src="https://studio.zepeto.me/img/gnb_product_icon_item.svg" style="margin-right: 15px;"><span>아이템</span></a></li>
+                        <li><a href="" class="headera_1"><img src="https://studio.zepeto.me/img/gnb_product_icon_world.svg" style="margin-right: 15px;"><span>월드</span></a></li>
+                        <li><a href="" class="headera_1"><img src="https://studio.zepeto.me/img/gnb_product_icon_live.svg" style="margin-right: 15px;"><span>라이브</span></a></li>
+                        <li><a href="" class="headera_1"><img src="https://studio.zepeto.me/img/gnb_product_icon_build.svg" style="margin-right: 15px;"><span>빌드잇</span></a></li>
+                    </ul>
+                </li>
+                <li><a href="" class="navi_bar2 header_a">크리에이터 프로그램</a></li>
+                <li><a href="" class="navi_bar2 header_a">비즈니스</a></li>
+                <li id="guide_content"><a href="" class="navi_bar3 header_a">가이드 ∨</a>
+                    <ul id="guide_menu">
+                        <li><a href="" class="headera_1"><img src="https://studio.zepeto.me/img/gnb_guide_icon_guide.svg" style="margin-right: 15px;"><span>아이템 가이드</span><img src="https://studio.zepeto.me/img/icon_new_bubble.svg" style="margin: 0px 0px 2px 20px"></a></li>
+                        <li><a href="" class="headera_1"><img src="https://studio.zepeto.me/img/gnb_guide_icon_guide.svg" style="margin-right: 15px;"><span>월드 가이드</span><img src="https://studio.zepeto.me/img/icon_new_bubble.svg" style="margin: 0px 0px 2px 20px"></a></li>
+                        <li><a href="" class="headera_1"><img src="https://studio.zepeto.me/img/gnb_guide_icon_learn.svg" style="margin-right: 15px;"><span>학습</span></a></li>
+                    </ul>
+                </li>
+                <li><a href="" class="navi_bar2 header_a">지원</a></li>
+            </ul>
+        </div>
+
+        <div id="header_3">
+            <button id="button"><span>콘텐츠 관리</span></button>
+            <span id="sound"><a href=""><img src="resources/image/확성기128.png" width="28px" height="28px"></a></span>
+        </div>
+    </div>
+    <script>
+        $(function(){
+            $(".navi_bar1").hover(function(){
+                $(".navi_bar1").css({"color":"white","font-weight":"bold"}).text("콘텐츠 ∧");
+            },function(){
+                $(".navi_bar1").css({"color":"rgba(255, 255, 255, 0.6)","font-weight":"normal"}).text("콘텐츠 ∨");
+            })
+
+            $(".navi_bar3").hover(function(){
+                $(".navi_bar3").css({"color":"white","font-weight":"bold"}).text("가이드 ∧");
+            },function(){
+                $(".navi_bar3").css({"color":"rgba(255, 255, 255, 0.6)","font-weight":"normal"}).text("가이드 ∨");
+            })
+        })
+    </script>
+ 
+    
+</body>
+</html>

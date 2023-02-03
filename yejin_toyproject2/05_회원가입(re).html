@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>콘텐츠 관리</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
     <style>
 
@@ -67,14 +67,14 @@
             text-align: center;
         }
         
-        /* #qr_content{display: none;} */
         #phone_content{display: none;}
         #idemail_content{display: none;}
         
-        #pr_info img{width: 16px; height: 16px; }
-        #qr_code{display: inline-block; margin: 23.5px 0px;}
+        #qr_info{font-size: 15px; color: #99999c;}
+        #qr_info img{margin-right: 7px;}
+        #qr_code{display: inline-block; margin: 50px 0px 22px 0px;}
         #qr_reset{color: #75757a; font-size: 15px;}
-        #qr_text{font-size: 17px; font-weight: 700; margin: 20px 0px;}
+        #qr_text{font-size: 17px; font-weight: 700; margin: 25px 0px 18px 0px}
 
         #phone_number, #password, #id_email{width: 400px; height: 40px; border-radius: 10px; display: flex; border: 1px solid #e0e0e1; }
         #phone_number{margin:30px 0px 15px 0px}
@@ -92,9 +92,10 @@
         #join_info2{color : #c7c7c9; font-size: 14px; margin:30px 0px 20px 0px;}
         #join_icon{
             display: flex;
-            justify-content: space-around;
+            justify-content: center;
             margin-bottom: 50px;
         }
+        #join_icon img{margin: 0px 8px;}
         #join_last>span{color:  rgb(92, 70, 255); font-size: 15px;}
 
         input[type=text],select,input[type=password]{border: none;}
@@ -114,7 +115,7 @@
             
             <form action="">
                 <div id="btn" >
-                    <button type="button" class="button" id="qr"><span>QR코드</span></button>
+                    <button type="button" class="button" id="qr" style="color: black; font-weight: 700; border-bottom: 2px solid black;"><span>QR코드</span></button>
 
                     <button type="button"  class="button" id="phone"><span>전화번호</span></button>
 
@@ -122,13 +123,13 @@
                 </div>
 
                 <div id="qr_content" class="join">
-                    <div id="qr_code" style="width:150px; height: 150px;"></div>
+                    <div id="qr_code" style="width:150px; height: 150px;"><img src="resources/image/qr코드.png"></div>
                     <div id="qr_reset"><span>코드 초기화</span></div>
                     <div id="qr_text">로그인 하시려면 제패토 앱을 열고 <br> QR코드를 스캔해주세요.</div>
                     <div id="qr_info">
-                        <img src="resources/image/scas.png" style="margin-right: 5px;">프로필  <img src="resources/image/-.png">
-                        <img src="resources/image/qr-.png" style="margin-right: 6px;">내 코드 <img src="resources/image/-.png">
-                        <img src="resources/image/qr- (1).png" style="margin-right: 5px;">스캔하기
+                        <img src="resources/image/사람.png" width="20px" height="20px" >프로필 ＞
+                        <img src="resources/image/qr-.png" >내 코드 ＞
+                        <img src="resources/image/qr- (1).png">스캔하기
                     </div>
                     <div id="qr_other">
                         <div id="join_info2">또는</div>
@@ -247,8 +248,10 @@
 
         $('button').click(function(){
             $('button').removeClass("active");
+            $("#qr").removeAttr("style");
             $(this).addClass("active")
         })
+        
     </script>
 </body>
 </html>
